@@ -7,9 +7,9 @@ app.post("/bfhl", (req, res) => {
   try {
     const input = req.body.data || [];
 
-    const user_id = "nagachaitanya_babu_04102004"; 
-    const email = "nagachaitanyababusiga@gmail.com";        
-    const roll_number = "22BCE9950";       
+    const user_id = "nagachaitanyababu_siga_04102004"; 
+    const email = "nagachaitanyababusiga@gmail.com";      
+    const roll_number = "22BCE9950";  
 
     let even_numbers = [];
     let odd_numbers = [];
@@ -20,6 +20,7 @@ app.post("/bfhl", (req, res) => {
 
     input.forEach((item) => {
       if (/^\d+$/.test(item)) {
+        // numeric
         const num = parseInt(item, 10);
         sum += num;
         if (num % 2 === 0) even_numbers.push(item);
@@ -32,6 +33,7 @@ app.post("/bfhl", (req, res) => {
       }
     });
 
+    // build alternating caps reverse concat string
     concat_letters = concat_letters.reverse();
     let concat_string = concat_letters
       .map((ch, i) =>
